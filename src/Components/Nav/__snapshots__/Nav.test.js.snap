@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Component render nav component 1`] = `
+<div>
+  <nav>
+    <img
+      alt="Logo"
+      src="/favicon.ico"
+    />
+    <ul>
+      <a
+        class="link"
+        href="/"
+      >
+        <li>
+          Home
+        </li>
+      </a>
+      <a
+        class="link"
+        href="/shop"
+      >
+        <li>
+          Shop
+        </li>
+      </a>
+    </ul>
+  </nav>
+</div>
+`;
