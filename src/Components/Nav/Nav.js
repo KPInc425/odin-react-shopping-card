@@ -4,7 +4,7 @@ import './Nav.css';
 const Nav = () => {
     return (
         <nav>
-            <img src={ `${process.env.PUBLIC_URL}/favicon.ico` } alt='Logo'></img> 
+            <img src={ `${process.env.PUBLIC_URL}/ilg128.png` } alt='Logo'></img> 
             <ul>
                 <Link to='/' className='link'>
                     <li>Home</li>

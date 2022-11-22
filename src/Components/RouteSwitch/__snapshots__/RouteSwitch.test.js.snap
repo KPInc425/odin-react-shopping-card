@@ -5,7 +5,7 @@ exports[`RouteSwitch Component renders route browser 1`] = `
   <nav>
     <img
       alt="Logo"
-      src="/favicon.ico"
+      src="/ilg128.png"
     />
     <ul>
       <a

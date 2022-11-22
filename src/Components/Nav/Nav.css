@@ -26,5 +26,10 @@ li {
 }
 
 .link:hover {
-    color: green;
+    color: rgb(4, 205, 255);
+}
+
+nav img {
+    width: 64px;
+    height: 64px;
 }
