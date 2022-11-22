@@ -3,10 +3,27 @@
 exports[`RouteSwitch Component renders route browser 1`] = `
 <div>
   <nav>
+    <img
+      alt="Logo"
+      src="/favicon.ico"
+    />
     <ul>
-      <li>
-        Menu Item 1
-      </li>
+      <a
+        class="link"
+        href="/"
+      >
+        <li>
+          Home
+        </li>
+      </a>
+      <a
+        class="link"
+        href="/shop"
+      >
+        <li>
+          Shop
+        </li>
+      </a>
     </ul>
   </nav>
   <div
