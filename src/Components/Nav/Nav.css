@@ -1,0 +1,29 @@
+nav {
+    background-color: rgb(113, 145, 116);
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+    font-size: large;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    color: green;
+}
