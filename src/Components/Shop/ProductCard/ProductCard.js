@@ -1,12 +1,11 @@
 const ProductCard = (props) => {
-    // console.log(props);
     return (
         <div className='productCard'>
             <h3>{ props.title || "Title" }</h3>
-            <img src={ props.img } alt='' />
-            <p className="price"> { props.price || "Price" } </p>
-            <p> { props.description || "Description" } </p>
-            <p> { props.category || "Category" } </p>
+            <img src={ props.image } alt='' />
+            <h5 className="price"> Price: ${ props.price || "Price" } </h5>
+            <p> Description: { props.description || "Description" } </p>
+            <p> Category: { props.category || "Category" } </p>
             <Rating rate={ props.rating.rate } count={ props.rating.count } />
         </div>
     )
