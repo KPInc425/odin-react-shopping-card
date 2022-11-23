@@ -25,7 +25,7 @@ describe("ProductCard Component renders", () => {
 
     it("renders title", () => {
         render(<ProductCard { ...mockProduct } />)
-        const title = screen.getByRole('heading');
+        const title = screen.getByRole('heading', { name: "Title"});
         expect(title).toBeTruthy();
     })
     it("renders image", () => {
@@ -35,17 +35,17 @@ describe("ProductCard Component renders", () => {
     })
     it("renders price", () => {
         render(<ProductCard { ...mockProduct } />)
-        const price = screen.getByText('109.92');
+        const price = screen.getByText(/109.92/i);
         expect(price).toBeTruthy();
     })
     it("renders description", () => {
         render(<ProductCard { ...mockProduct } />)
-        const description = screen.getByText('Descrtiption of Product Here');
+        const description = screen.getByText(/Descrtiption of Product Here/i);
         expect(description).toBeTruthy();
     })
     it("renders category", () => {
         render(<ProductCard { ...mockProduct } />)
-        const category = screen.getByText("men's clothing");
+        const category = screen.getByText(/men's clothing/i);
         expect(category).toBeTruthy();
     })
     it("renders rating rate", () => {

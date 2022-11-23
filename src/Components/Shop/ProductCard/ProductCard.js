@@ -45,9 +45,6 @@ const AmountInput = () => {
             setAmt(Number(e.target.value));
         }
     }
-
-    
-
     return (
         <div>
             <button onClick={ decrementAmt } >-</button>
