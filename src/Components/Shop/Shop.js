@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import ProductCard from './ProductCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
+import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import './Shop.css';
 
 const Shop = () => {
@@ -19,6 +20,8 @@ const Shop = () => {
     return (
         <div className="shop">
             <h1>Shop Page</h1>
+            <ShoppingCart expandedCart={ true }/>
+
             <div className="shopItems">
                 { shopItems.map((item) => <ProductCard key={item.id} {...item} />) }
             </div>
