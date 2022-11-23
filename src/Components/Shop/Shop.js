@@ -9,6 +9,16 @@ const Shop = () => {
     }, []);
 
     const [shopItems, setShopItems] = useState([]);
+    const [itemsInCart, setItemsInCart] = useState([]);
+    const [isCartExpanded, setIsCartExpanded] = useState(0);
+
+    const addItemToCart = (item) => {
+        setItemsInCart([...itemsInCart, item])
+    }
+
+    const changeCartExpansion = () => {
+        setIsCartExpanded(!isCartExpanded);
+    }
 
     const fetchShopItems = async () => {
         const data = await fetch('https://fakestoreapi.com/products');
@@ -20,10 +30,20 @@ const Shop = () => {
     return (
         <div className="shop">
             <h1>Shop Page</h1>
-            <ShoppingCart expandedCart={ true }/>
-
+            <ShoppingCart 
+            expandedCart={ isCartExpanded } 
+            changeCartExpansion={ changeCartExpansion }
+            itemsInCart={ itemsInCart }
+            />
             <div className="shopItems">
-                { shopItems.map((item) => <ProductCard key={item.id} {...item} />) }
+                { shopItems.map((item) => {
+                return <ProductCard 
+                        key={item.id} 
+                        {...item} 
+                        addItemToCart={ addItemToCart } 
+                        />
+                }) 
+                }
             </div>
         </div>
     )

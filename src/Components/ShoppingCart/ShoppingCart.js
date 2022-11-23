@@ -1,23 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import CartItem from "./CartItem/CartItems";
 
-const ShoppingCart = ({ expandedCart }) => {
-    const [itemsInCart, setItemsInCart] = useState([
-        {
-            title: "title",
-            amt: 5,
-            price: 14.99,
-        }
-    ]);
+const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
 
-    const [totalItems, setTotalItems] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0.00);
+    const getTotalPrice = () => {
+        const allPrices = itemsInCart.map((item) => item.price);
+        console.log(allPrices);
+        const totalPrice = allPrices.reduce((a, b) => a + b, 0);
+        console.log(totalPrice);
 
-    const addToTotalItems = (itemAmtToAdd) => {
-        setTotalItems((totalItems + itemAmtToAdd));
+        return totalPrice;
     }
 
-    const addToTotalPrice = (priceToAdd) => {
-        setTotalPrice((totalPrice + priceToAdd));
+    const handleExpansionClick = () => {
+        changeCartExpansion();
     }
 
     if (expandedCart) {
@@ -28,19 +24,18 @@ const ShoppingCart = ({ expandedCart }) => {
                     { 
                     itemsInCart.map((item) => {
                         return (
-                            <CartItem 
-                                props={item} 
-                                addToTotalItems={ addToTotalItems } 
-                                addToTotalPrice={ addToTotalPrice }
+                            <CartItem
+                                key={ item.id }
+                                { ...item } 
                             />
                         )})
                     }    
                 </div>
-                <p className="totalItems">Total Items: { totalItems }</p>
-                <p className="totalPrice">Total Price: ${ totalPrice }</p>
+                <p className="totalItems">Total Items: { itemsInCart.length }</p>
+                <p className="totalPrice">Total Price: ${ getTotalPrice() }</p>
                 <div className="cartBtns">
                     <button>Checkout</button>
-                    <button>Cancel</button>
+                    <button onClick={ handleExpansionClick } >Cancel</button>
                 </div>
             </div>
         );
@@ -48,31 +43,14 @@ const ShoppingCart = ({ expandedCart }) => {
         return (
             <div className="shoppingCartMin">
                 <h3>Shopping Cart</h3>
-                <p>Total Items: { "Total" }</p>
-                <p>Total Price: ${ "Price" }</p>
-                <button cla>Go To Cart</button>
+                <p>Total Items: { itemsInCart.length }</p>
+                <p>Total Price: ${ getTotalPrice().toFixed(2) }</p>
+                <button onClick={ handleExpansionClick } >Go To Cart</button>
             </div>
         )
     }
 }
 
-const CartItem = ({ props, addToTotalItems, addToTotalPrice }) => {
-    const totalPrice = (props.amt * props.price);
-    useEffect(() => {
-        addToTotalItems(props.amt);
-        addToTotalPrice(totalPrice);
-    }, []);
 
-
-
-    return (
-        <div className="cartItem">
-            <p> Title: { props.title } </p>
-            <p> Amt: { props.amt } </p>
-            <p> Price: { props.price } </p>
-            <p> Total: { totalPrice } </p>
-        </div>
-    )
-}
 
 export default ShoppingCart;
