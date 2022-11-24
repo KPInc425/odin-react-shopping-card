@@ -4,12 +4,19 @@ import CartItem from "./CartItem/CartItems";
 const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
 
     const getTotalPrice = () => {
-        const allPrices = itemsInCart.map((item) => item.price);
+        const allPrices = itemsInCart.map((item) => item.price * item.amt);
         console.log(allPrices);
         const totalPrice = allPrices.reduce((a, b) => a + b, 0);
         console.log(totalPrice);
 
         return totalPrice;
+    }
+
+    const getTotalItems = () => {
+        const allAmounts = itemsInCart.map((item) => item.amt);
+        const totalAmount = allAmounts.reduce((a, b) => a + b, 0);
+
+        return totalAmount;
     }
 
     const handleExpansionClick = () => {
@@ -31,8 +38,8 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
                         )})
                     }    
                 </div>
-                <p className="totalItems">Total Items: { itemsInCart.length }</p>
-                <p className="totalPrice">Total Price: ${ getTotalPrice() }</p>
+                <p className="totalItems">Total Items: { getTotalItems() }</p>
+                <p className="totalPrice">Total Price: ${ getTotalPrice().toFixed(2) }</p>
                 <div className="cartBtns">
                     <button>Checkout</button>
                     <button onClick={ handleExpansionClick } >Cancel</button>
@@ -43,7 +50,7 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
         return (
             <div className="shoppingCartMin">
                 <h3>Shopping Cart</h3>
-                <p>Total Items: { itemsInCart.length }</p>
+                <p>Total Items: { getTotalItems() }</p>
                 <p>Total Price: ${ getTotalPrice().toFixed(2) }</p>
                 <button onClick={ handleExpansionClick } >Go To Cart</button>
             </div>

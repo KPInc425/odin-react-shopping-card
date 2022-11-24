@@ -17,7 +17,7 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
 
     const handleChange = (e) => {
         console.log(e.target.value);
-        if (e.target.value > 0) {
+        if (Number(e.target.value) > 0) {
             setAmt(Number(e.target.value));
         }
     }

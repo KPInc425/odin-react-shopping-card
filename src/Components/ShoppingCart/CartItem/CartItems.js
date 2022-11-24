@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 
 const CartItem = ({ title, amt, price }) => {
     const totalPrice = (amt * price);
