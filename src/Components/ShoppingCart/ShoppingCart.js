@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CartItem from "./CartItem/CartItems";
 
 const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
