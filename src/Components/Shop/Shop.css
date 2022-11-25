@@ -70,7 +70,7 @@ input {
 .shoppingCartMin {
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    background-color: grey;
+    background-color: rgb(96, 151, 102);
     border: 1px solid black;
     border-radius: 8px;
     top: 12%;
