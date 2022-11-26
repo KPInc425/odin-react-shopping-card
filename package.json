@@ -2,7 +2,7 @@
   "name": "odin-shopping-cart",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/KPInc425/odin-react-shopping-cart",
+  "homepage": "https://kpinc425.github.io/odin-react-shopping-cart",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp ./404.html ./build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",

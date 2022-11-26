@@ -28,7 +28,7 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
             <div className="shoppingCartExpanded">
                 <h2>Shopping Cart</h2>
                 <div className="cartItemsContainer">
-                    <div class="cartItem">
+                    <div className="cartItem">
                         <h6>Item</h6>
                         <h6>Amount</h6>
                         <h6>Price</h6>
