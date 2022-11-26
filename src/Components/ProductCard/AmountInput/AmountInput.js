@@ -37,11 +37,11 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
     }
 
     return (
-        <div>
+        <div className="amtInput">
+            <input type="text" onChange={ handleChange } placeholder={ 0 } />
             <button onClick={ decrementAmt } >-</button>
-            <button onClick={ incrementAmt } >+</button>
-            <input type="text" onChange={ handleChange }/>
             <label>Amt: { amt }</label>
+            <button onClick={ incrementAmt } >+</button>
             <button onClick={ handleClick }>Add to Cart</button>
         </div>
     )

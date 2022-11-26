@@ -1,4 +1,5 @@
 import CartItem from "./CartItem/CartItems";
+import './ShoppingCart.css';
 
 const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
 
@@ -27,6 +28,12 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
             <div className="shoppingCartExpanded">
                 <h2>Shopping Cart</h2>
                 <div className="cartItemsContainer">
+                    <div class="cartItem">
+                        <h6>Item</h6>
+                        <h6>Amount</h6>
+                        <h6>Price</h6>
+                        <h6>Total</h6>
+                    </div>
                     { 
                     itemsInCart.map((item) => {
                         return (
@@ -37,8 +44,10 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
                         )})
                     }    
                 </div>
-                <p className="totalItems">Total Items: { getTotalItems() }</p>
-                <p className="totalPrice">Total Price: ${ getTotalPrice().toFixed(2) }</p>
+                <div class="totals">
+                    <p className="totalItems">Total Items: { getTotalItems() }</p>
+                    <p className="totalPrice">Total Price: ${ getTotalPrice().toFixed(2) }</p>
+                </div>
                 <div className="cartBtns">
                     <button>Checkout</button>
                     <button onClick={ handleExpansionClick } >Cancel</button>

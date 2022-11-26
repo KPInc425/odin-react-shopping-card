@@ -1,0 +1,132 @@
+.productCard {
+    display: grid;
+    position: relative;
+    grid-template-columns: 100%;
+    grid-template-rows: 7% 35% 5% 8% 25% 5% 15%;
+    border: 5px outset green;
+    border-radius: 8px;
+    width: 25%;
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.514);
+}
+
+.productCard h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productCard * {
+    /* border: 1px solid red; */
+}
+
+.productCard button {
+    background: none;
+}
+
+.productCard button:hover {
+    background-color: aqua;
+}
+
+.productCard button:active {
+    background-color: rgb(255, 0, 0);
+}
+
+.productCard button:last-child {
+    display: block;
+    margin: 0 auto;
+}
+
+.productCard img {
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    border: 8px inset green;
+    border-radius: 8px;
+}
+
+.productCard p {
+    text-align: left;
+    max-width: 100%;
+}
+
+.descriptionText {
+    /* position: relative; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    -webkit-box-pack: end;
+    font-size: 80%;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    border: 3px inset green;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.164);
+}
+
+.fullDescriptionText {
+    visibility: hidden;
+    opacity: 0;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 2.5%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.descriptionText:hover .fullDescriptionText {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.rating {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 95%;
+}
+
+.rating p {
+    padding: 5px;
+}
+
+.category {
+    font-size: 85%;
+}
+
+.amtInput {
+    margin: auto;
+}
+
+.amtInput label {
+    font-size: 80%;
+    margin: 0 5px;
+}
+
+.amtInput button {
+    width: 10%;
+}
+
+.amtInput button:last-child {
+    width: 65%;
+}
+
+input {
+    width: 22%;
+    margin: 2px 2px 2px 0;
+    border: 2px solid green;
+    background-color: rgba(255, 255, 255, 0.473);
+}
+
+input:focus {
+    outline: 2px solid rgb(0, 168, 197);
+    background-color: white;
+}
