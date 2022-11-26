@@ -13,7 +13,25 @@ const Shop = () => {
     const [isCartExpanded, setIsCartExpanded] = useState(0);
 
     const addItemToCart = (item) => {
-        setItemsInCart([...itemsInCart, item])
+        const copyItemsInCart = [...itemsInCart];
+        const itemFound = findItemInCart(copyItemsInCart, item);
+
+        if (itemFound) {
+            itemFound.amt = itemFound.amt + item.amt;
+            copyItemsInCart.filter((item) => item.title === itemFound.title);
+            setItemsInCart(copyItemsInCart);
+        } else {
+            setItemsInCart([...itemsInCart, item])
+        }
+    }
+
+    const findItemInCart = (items, itemToFind) => {
+        const foundItem = items.find((item, index) => item.title === itemToFind.title);
+        if (foundItem) {
+            return foundItem;
+        } else {
+            return null;
+        }
     }
 
     const changeCartExpansion = () => {
