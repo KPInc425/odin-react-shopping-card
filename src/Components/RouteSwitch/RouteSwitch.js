@@ -6,7 +6,7 @@ import Shop from '../Shop/Shop';
 
 const RouteSwitch = () => {
     return (
-        <BrowserRouter >
+        <BrowserRouter basename='/odin-react-shopping-cart' >
             <Nav /> 
             <Routes>
                 <Route path='/' element={ <App />} />
