@@ -5,9 +5,9 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
 
     const getTotalPrice = () => {
         const allPrices = itemsInCart.map((item) => item.price * item.amt);
-        console.log(allPrices);
+        // console.log(allPrices);
         const totalPrice = allPrices.reduce((a, b) => a + b, 0);
-        console.log(totalPrice);
+        // console.log(totalPrice);
 
         return totalPrice;
     }
