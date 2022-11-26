@@ -5,13 +5,16 @@ import './ProductCard.css';
 const ProductCard = (props) => {
     return (
         <div className='productCard'>
-            <h4>{ props.title || "Title" }</h4>
+            <h4 className="productTitle">
+                { props.title || "Title" } 
+                <span className="toolTipText titleToolTip"> { props.title }</span>
+            </h4>
             <img src={ props.image } alt='' />
             <h5 className="price"> Price: ${ props.price.toFixed(2) || "Price" } </h5>
             <Rating rate={ props.rating.rate } count={ props.rating.count } />
             <p className="descriptionText"> 
                 Description: { props.description || "Description" } 
-                <span className="fullDescriptionText"> { props.description }</span>
+                <span className="toolTipText fullDescriptionToolTip"> { props.description }</span>
             </p>
             <p className="category"> Category: { props.category || "Category" } </p>
             <AmountInput 

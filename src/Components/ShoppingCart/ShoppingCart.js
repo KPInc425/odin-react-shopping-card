@@ -44,7 +44,7 @@ const ShoppingCart = ({ expandedCart, changeCartExpansion, itemsInCart }) => {
                         )})
                     }    
                 </div>
-                <div class="totals">
+                <div className="totals">
                     <p className="totalItems">Total Items: { getTotalItems() }</p>
                     <p className="totalPrice">Total Price: ${ getTotalPrice().toFixed(2) }</p>
                 </div>
