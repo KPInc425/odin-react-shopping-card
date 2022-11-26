@@ -5,7 +5,7 @@
     grid-template-rows: 7% 35% 5% 8% 25% 5% 15%;
     border: 5px outset green;
     border-radius: 8px;
-    width: 25%;
+    width: 20%;
     margin: 20px 0;
     padding: 10px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.514);
@@ -15,10 +15,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.productCard * {
-    /* border: 1px solid red; */
 }
 
 .productCard button {
@@ -130,3 +126,23 @@ input:focus {
     outline: 2px solid rgb(0, 168, 197);
     background-color: white;
 }
+
+@media (max-width: 1000px) {
+    .productCard {
+        width: 25%;
+    }
+
+}
+@media (max-width: 850px) {
+    .productCard {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    .productCard {
+        width: 75%;
+    }
+    
+}
+
