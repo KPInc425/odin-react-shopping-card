@@ -178,3 +178,12 @@ input:focus {
     
 }
 
+@media ( max-width: 300px) {
+    .productCard {
+        width: 95%;
+    }
+
+    .shoppingCartExpanded {
+        max-width: 200px;
+    }
+}

@@ -41,7 +41,6 @@
     background: linear-gradient(280deg, rgb(135, 173, 139) 20%, rgb(164, 214, 169) 40%, rgb(197, 238, 197) 100%);
     border: 5px outset rgb(0, 94, 0);
     border-radius: 8px;
-    top: 10%;
     position: fixed;
     top: 55%;
     left: 50%;
@@ -134,14 +133,21 @@
     font-size:  90%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
     .shoppingCartMin {
         font-size: 80%;
     }
 
     .shoppingCartExpanded {
         grid-template-columns: 100%;
-        min-height: 650px;
+        min-height: 350px;
+    }
+
+    .cartBtns button {
+        display: block;
+        margin: auto;
+        width: 100%;
+        border: 2px outset green;
     }
 
     .cartItemsContainer {
@@ -163,11 +169,86 @@
 
     .cartItem {
         grid-template-columns: 40% repeat(3, 20%);
+        padding: 5px;
     }
+
+    .cartItem h6 {
+        font-size: 75%;
+    }
+
+    .cartItem p:first-child {
+        font-size: 65%;
+    }
+    .cartItem p:nth-child(2) {
+        font-size:  60%;
+    }
+    .cartItem p:nth-child(3) {
+        font-size:  60%;
+    }
+    .cartItem p:nth-child(4) {
+        font-size:  80%;
+    }
+
+    .totalItems {
+        font-size: 75%;
+    }
+    
+    .totalPrice {
+        font-size: 80%;
+    }
+}
+
+@media ( max-width: 300px) {
+    .shoppingCartMin, .shoppingCartMin button {
+        font-size: 55%;
+    }
+
+    .shoppingCartExpanded {
+        max-width: 200px;
+        left: 45%;
+    }
+
+    .cartItem {
+        grid-template-columns: 30% 10% repeat(2, 30%);
+        padding: 5px;
+    }
+
+    .cartItem h6 {
+        font-size: 50%;
+    }
+
+    .cartItem p:first-child {
+        font-size: 45%;
+    }
+    .cartItem p:nth-child(2) {
+        font-size:  30%;
+    }
+    .cartItem p:nth-child(3) {
+        font-size:  50%;
+    }
+    .cartItem p:nth-child(4) {
+        font-size:  60%;
+    }
+
+    .totalItems {
+        font-size: 55%;
+    }
+    
+    .totalPrice {
+        font-size: 60%;
+    }
+    
 }
 
 @media (max-height: 650px) {
     .shoppingCartMin {
         top: 2%;
+    }
+}
+
+@media (min-height: 1300px) {
+    .shoppingCartExpanded {
+        top: 45%;
+        max-height: 70%; 
     }
 }
