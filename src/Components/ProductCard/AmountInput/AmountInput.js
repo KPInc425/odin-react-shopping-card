@@ -22,7 +22,7 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
         }
     }
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         if (amt > 0) {
             const newItem = {
                 title: itemTitle,
@@ -30,7 +30,12 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
                 price: itemPrice,
                 id: itemID
             }
-            // console.log(newItem);
+            console.log(e.target.parentNode.firstChild.value);
+            let amtInput = e.target.parentNode.firstChild;
+            amtInput.value = "";
+            // const amtInput = document.querySelector('.amtInput input');
+            // console.log(amtInput.value);
+            // amtInput.value = 0;
             setAmt(0);
             addItemToCart(newItem);
         }
