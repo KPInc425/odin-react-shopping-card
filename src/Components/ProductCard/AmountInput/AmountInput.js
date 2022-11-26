@@ -30,12 +30,8 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
                 price: itemPrice,
                 id: itemID
             }
-            console.log(e.target.parentNode.firstChild.value);
             let amtInput = e.target.parentNode.firstChild;
             amtInput.value = "";
-            // const amtInput = document.querySelector('.amtInput input');
-            // console.log(amtInput.value);
-            // amtInput.value = 0;
             setAmt(0);
             addItemToCart(newItem);
         }
@@ -47,7 +43,7 @@ const AmountInput = ({ addItemToCart, itemTitle, itemPrice, itemID }) => {
             <button onClick={ decrementAmt } >-</button>
             <label>Amt: { amt }</label>
             <button onClick={ incrementAmt } >+</button>
-            <button onClick={ handleClick }>Add to Cart</button>
+            <button onClick={ handleClick } >Add to Cart</button>
         </div>
     )
 }

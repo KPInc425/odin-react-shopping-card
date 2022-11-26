@@ -7,10 +7,10 @@ const Nav = () => {
             <img src={ `${process.env.PUBLIC_URL}/ilg128.png` } alt='Logo'></img> 
             <ul>
                 <Link to='/' className='link'>
-                    <li>Home</li>
+                    <li className='insetText'>Home</li>
                 </Link>
                 <Link to='/shop' className='link'>
-                    <li>Shop</li>
+                    <li className='insetText'>Shop</li>
                 </Link>
             </ul>
         </nav>

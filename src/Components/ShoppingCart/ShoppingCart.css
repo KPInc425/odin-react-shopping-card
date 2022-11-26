@@ -21,7 +21,7 @@
     border: 2px outset green;
 }
 .shoppingCartMin button:hover, .shoppingCartExpanded button:hover {
-    background-color: aqua;
+    background-color: rgb(29, 201, 201);
 }
 
 .shoppingCartMin button {
